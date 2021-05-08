@@ -15,7 +15,7 @@ const { resolve } = require("path");
 //DELETING coupon
 router.delete('/coupon/:id',async (req,res)=>{
   const coupon=await Coupon.findByIdAndDelete(req.params.id)
-  req.flash("sucess_msg",`${coupon.code} is successfully deleted`)
+  req.flash("success_msg",`${coupon.code} is successfully deleted`)
   res.redirect(req.headers.referer)
   // console.log(coupon)
 
@@ -29,7 +29,6 @@ router.get("/coupon", async (req, res) => {
   const coupons = await Coupon.find({}).sort({ createdAt: -1 });
 
   const genCoupon = couponGen();
-
   res.render("admin/coupon", { pcount, genCoupon, coupons });
 });
 
@@ -76,8 +75,10 @@ router.post("/coupon", async (req, res) => {
         expireDate: date,
       });
       newCoupon = await newCoupon.save();
+
+      req.flash('success_msg', 'New coupon generated');
       //console.log(newCoupon)
-      res.redirect(req.headers.referer);
+      res.redirect('back');
 
       // console.log(date,code,worth)
     });

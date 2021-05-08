@@ -34,12 +34,17 @@
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="/dist/js/pages/dashboard2.js"></script>
 
+<script src="/js/toastr.js"></script>
 
 <script>
     window.onload=function(){
-      if(success_msg != ""){
-        toastr.success('<%= success_msg %>')
-        } 
+
+           <% 
+             if (success_msg != ""){ %>
+               toastr.success('<%= success_msg %>'); //Success messages
+           <% } %>
+
+        
     }
    
     

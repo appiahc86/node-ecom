@@ -1,4 +1,4 @@
-const toastr = require("toastr");
+// const toastr = require("toastr");
 const express = require("express");
 const app = express();
 const path = require("path");
@@ -57,8 +57,12 @@ app.use(session({
   cookie: { maxAge: 60 * 1000 * 60 * 3 },
 })
 );
+
+// flash message
+app.use(flash());
+
 //static files
-app.use(express.static(path.join(__dirname, "./public")));
+app.use(express.static(path.join(__dirname, "public")));
 // favicon
 
 // app.use(favicon(__dirname + '/public/img/favicon.ico'));
@@ -79,8 +83,6 @@ app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 app.set(express.static(path.join(__dirname, "public")));
 
-// flash message
-app.use(flash());
 
 // declaring local variables for displaying FLASH messages
 app.use((req, res, next) => {
