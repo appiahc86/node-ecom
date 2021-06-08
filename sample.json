@@ -1,0 +1,121 @@
+// 20210506054846
+// http://localhost:5050/my-cart
+
+{
+    "totalQty": 37,
+    "totalCost": 21200,
+    "product": [
+      {
+        "foundProduct": {
+          "richDescription": "We import our products from international entities from all over the world. Buy quality iphones from us at cheaper prices than most e-stores.We sell our products with you in mind\r\n                   \r\n\r\n                  ",
+          "price": 2500,
+          "isFeatured": true,
+          "viewCount": 0,
+          "worth": "New",
+          "image": [
+            "http://res.cloudinary.com/dlbclykto/image/upload/v1620039097/Images/sbvgrr8tzuy2yimu5oac.jpg",
+            "http://res.cloudinary.com/dlbclykto/image/upload/v1620039102/Images/he3bhd04m9zso1kyjxmg.jpg",
+            "http://res.cloudinary.com/dlbclykto/image/upload/v1620039112/Images/txfvkbimb8511iyp70v0.jpg",
+            "http://res.cloudinary.com/dlbclykto/image/upload/v1620039132/Images/wiubpamtvvp0djbeouto.jpg"
+          ],
+          "_id": "608fd40e9ba1e5340888cba7",
+          "name": "Iphone X",
+          "description": "    Awesome Iphone For An Awesome Customer.Buy Me Now,I am Affordable               ",
+          "category": "608fc943b12cd0374c1d8d00",
+          "countInStock": 300,
+          "createdAt": "2021-05-03T10:44:30.939Z",
+          "updatedAt": "2021-05-03T10:52:13.976Z",
+          "__v": 0,
+          "slug": "iphone-x"
+        },
+        "productQty": 14,
+        "productPrice": 35000
+      },
+      {
+        "foundProduct": {
+          "richDescription": " Airpod proAirpod proAirpod proAirpod proAirpod proAirpod proAirpod proAirpod proAirpod proAirpod proAirpod pro\r\n                    \r\n                   \r\n\r\n                  \r\n\r\n                   Airpod proAirpod proAirpod proAirpod proAirpod proAirpod proAirpod proAirpod proAirpod proAirpod proAirpod pro\r\n                    \r\n                   \r\n\r\n                  \r\n\r\n                   Airpod proAirpod proAirpod proAirpod proAirpod proAirpod proAirpod proAirpod proAirpod proAirpod proAirpod pro\r\n                    \r\n                   \r\n\r\n                  \r\n\r\n                   Airpod proAirpod proAirpod proAirpod proAirpod proAirpod proAirpod proAirpod proAirpod proAirpod proAirpod pro\r\n                    \r\n                   \r\n\r\n                  \r\n\r\n                  ",
+          "price": 300,
+          "isFeatured": true,
+          "viewCount": 0,
+          "worth": "New",
+          "image": [
+            "http://res.cloudinary.com/dlbclykto/image/upload/v1620052517/Images/dyg8gjjzwg01mwx9elzd.jpg",
+            "http://res.cloudinary.com/dlbclykto/image/upload/v1620052523/Images/v37dvnoseaolx86x5wy3.jpg",
+            "http://res.cloudinary.com/dlbclykto/image/upload/v1620052530/Images/vdc0a4fewzdimtdjehqk.jpg",
+            "http://res.cloudinary.com/dlbclykto/image/upload/v1620052534/Images/ukxdblxsee936b5swrbi.jpg"
+          ],
+          "_id": "60900a3766572220f0027259",
+          "name": "Airpod pro",
+          "description": "Airpod proAirpod proAirpod pro                  \r\n                  ",
+          "category": "608fc943b12cd0374c1d8d00",
+          "countInStock": 300,
+          "createdAt": "2021-05-03T14:35:35.215Z",
+          "updatedAt": "2021-05-03T14:35:35.215Z",
+          "__v": 0,
+          "slug": "airpod-pro"
+        },
+        "productQty": 23,
+        "productPrice": 6900
+      }
+    ]
+  }// 20210506054846
+// http://localhost:5050/my-cart
+
+{
+  "totalQty": 37,
+  "totalCost": 21200,
+  "product": [
+    {
+      "foundProduct": {
+        "richDescription": "We import our products from international entities from all over the world. Buy quality iphones from us at cheaper prices than most e-stores.We sell our products with you in mind\r\n                   \r\n\r\n                  ",
+        "price": 2500,
+        "isFeatured": true,
+        "viewCount": 0,
+        "worth": "New",
+        "image": [
+          "http://res.cloudinary.com/dlbclykto/image/upload/v1620039097/Images/sbvgrr8tzuy2yimu5oac.jpg",
+          "http://res.cloudinary.com/dlbclykto/image/upload/v1620039102/Images/he3bhd04m9zso1kyjxmg.jpg",
+          "http://res.cloudinary.com/dlbclykto/image/upload/v1620039112/Images/txfvkbimb8511iyp70v0.jpg",
+          "http://res.cloudinary.com/dlbclykto/image/upload/v1620039132/Images/wiubpamtvvp0djbeouto.jpg"
+        ],
+        "_id": "608fd40e9ba1e5340888cba7",
+        "name": "Iphone X",
+        "description": "    Awesome Iphone For An Awesome Customer.Buy Me Now,I am Affordable               ",
+        "category": "608fc943b12cd0374c1d8d00",
+        "countInStock": 300,
+        "createdAt": "2021-05-03T10:44:30.939Z",
+        "updatedAt": "2021-05-03T10:52:13.976Z",
+        "__v": 0,
+        "slug": "iphone-x"
+      },
+      "productQty": 14,
+      "productPrice": 35000
+    },
+    {
+      "foundProduct": {
+        "richDescription": " Airpod proAirpod proAirpod proAirpod proAirpod proAirpod proAirpod proAirpod proAirpod proAirpod proAirpod pro\r\n                    \r\n                   \r\n\r\n                  \r\n\r\n                   Airpod proAirpod proAirpod proAirpod proAirpod proAirpod proAirpod proAirpod proAirpod proAirpod proAirpod pro\r\n                    \r\n                   \r\n\r\n                  \r\n\r\n                   Airpod proAirpod proAirpod proAirpod proAirpod proAirpod proAirpod proAirpod proAirpod proAirpod proAirpod pro\r\n                    \r\n                   \r\n\r\n                  \r\n\r\n                   Airpod proAirpod proAirpod proAirpod proAirpod proAirpod proAirpod proAirpod proAirpod proAirpod proAirpod pro\r\n                    \r\n                   \r\n\r\n                  \r\n\r\n                  ",
+        "price": 300,
+        "isFeatured": true,
+        "viewCount": 0,
+        "worth": "New",
+        "image": [
+          "http://res.cloudinary.com/dlbclykto/image/upload/v1620052517/Images/dyg8gjjzwg01mwx9elzd.jpg",
+          "http://res.cloudinary.com/dlbclykto/image/upload/v1620052523/Images/v37dvnoseaolx86x5wy3.jpg",
+          "http://res.cloudinary.com/dlbclykto/image/upload/v1620052530/Images/vdc0a4fewzdimtdjehqk.jpg",
+          "http://res.cloudinary.com/dlbclykto/image/upload/v1620052534/Images/ukxdblxsee936b5swrbi.jpg"
+        ],
+        "_id": "60900a3766572220f0027259",
+        "name": "Airpod pro",
+        "description": "Airpod proAirpod proAirpod pro                  \r\n                  ",
+        "category": "608fc943b12cd0374c1d8d00",
+        "countInStock": 300,
+        "createdAt": "2021-05-03T14:35:35.215Z",
+        "updatedAt": "2021-05-03T14:35:35.215Z",
+        "__v": 0,
+        "slug": "airpod-pro"
+      },
+      "productQty": 23,
+      "productPrice": 6900
+    }
+  ]
+}

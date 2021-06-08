@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Shoppers &mdash; Colorlib e-Commerce Template</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mukta:300,400,700"> 
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <link rel="stylesheet" href="css/product.css">
+
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+
+
+    <link rel="stylesheet" href="css/aos.css">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.css" integrity="sha512-NXUhxhkDgZYOMjaIgd89zF2w51Mub53Ru3zCNp5LTlEzMbNNAjTjDbpURYGS5Mop2cU4b7re1nOIucsVlrx9fA==" crossorigin="anonymous" />
+    
+  </head>
+  <body>
+  
+  <div class="site-wrap">
+    <%-include('../layouts/home/header.ejs')%>
+    <div class="bg-light py-3">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 mb-0"><a href="/">Home</a> <span class="mx-2 mb-0">/</span> <strong class="text-black">My-Cart</strong></div>
+           
+          </div>
+        </div>
+      </div>
+
+      <div class="site-section">
+        <div class="container">
+          <div class="row mb-5">
+            <!-- <form class="col-md-12" method="post"> -->
+              <div class="site-blocks-table col-md-12">
+                <% if(myCart){%>
+                  <table class="table table-bordered">
+                  <thead>
+                    <tr>
+                      <th class="product-thumbnail">Image</th>
+                      <th class="product-name">Product</th>
+                      <th class="product-price">Price</th>
+                      <th class="product-quantity">Quantity</th>
+                      <th class="product-total">Total</th>
+                      <th class="product-remove">Remove</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                   <%myCart.product.forEach(prdct=>{%>
+                    <tr>
+                      <td class="product-thumbnail">
+                         <% let prdcImg=JSON.parse(JSON.stringify(prdct.foundProduct.image[0]))%>
+
+                        <img src="<%=prdcImg%>" alt="Image" class="img-fluid">
+                      </td>
+                      <td class="product-name">
+                         <% let prdcName=JSON.parse(JSON.stringify(prdct.foundProduct.name))%>
+                        <h2 class="h5 text-black"><%=prdcName.toString()%></h2>
+                      </td>
+                          
+                      <td><%=prdct.foundProduct.price%></td>
+                      <td>
+                        <!-- <div class="input-group mb-3" style="max-width: 120px;"> -->
+                          <%=prdct.productQty%>
+                          <!-- <div class="input-group-prepend"> -->
+                            <!-- <button class="btn btn-outline-primary js-btn-minus" type="button">−</button> -->
+                          <!-- </div> -->
+                          <!-- <input type="text" class="form-control text-center" value="<%=prdct.productQty%>" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1"> -->
+                          <!-- <div class="input-group-append"> -->
+                            <!-- <button class="btn btn-outline-primary js-btn-plus" type="button">+</button> -->
+                          <!-- </div> -->
+                        <!-- </div> -->
+  
+                      </td>
+                      <td><%=prdct.productPrice%></td>
+                      <td>
+                          
+                          <form action="/reduce/<%=prdct.foundProduct._id%>?_method=PUT" method="POST">
+                          <button type="submit" class="btn btn-primary btn-sm">X</button>
+                        </form>
+                        </td>
+                    </tr>
+                <%})%>
+                <%}else{%>
+                <h1>Your cart is empty!</h1>
+                <%}%>
+
+
+                  </tbody>
+                </table>
+              </div>
+            <!-- </form> -->
+          </div>
+  
+          <div class="row">
+            <div class="col-md-6">
+              <div class="row mb-5">
+                <!-- <div class="col-md-6 mb-3 mb-md-0"> -->
+                  <!-- <button type="submit" class="btn btn-primary btn-sm btn-block">Update Cart</button> -->
+
+                <!-- </div> -->
+                <div class="col-md-6">
+                  <a href="/" class="btn btn-outline-primary btn-sm btn-block">Continue Shopping</a>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <%if(coupons){%> 
+                    <div class="alert alert-success alert-dismissible">
+                      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                      <h5><i class="icon fas fa-bullhorn "></i> FREE COUPON IN CART!</h5>
+                      <%for(coupon of allCoupons){%>
+                        A GH₵<%=coupon.worth%> Free Cash Off When You Use <span class="p-1 bage badge-info"><%=coupon.code%></span> Coupon Code On Your Cart Items <br> <br>
+              
+                    <%  }%>
+                    </div>
+                    <%}%>
+                  <% let userCartId=JSON.parse(JSON.stringify(myCart.id))%>
+                  <%=userCartId%>
+                    <form action="/apply-coupon/<%=userCartId%>" method="POST">
+                  <label class="text-black h4" for="coupon">Coupon</label>
+                  <p>Enter your coupon code if you have one.</p>
+                </div>
+                <div class="col-md-8 mb-3 mb-md-0">
+                  <input type="text" class="form-control py-3" name="coupon"id="coupon" placeholder="Coupon Code">
+                </div>
+                <div class="col-md-4">
+                  <button type="submit" class="btn btn-primary btn-sm">Apply Coupon</button>
+                </div>
+              </form>
+              </div>
+            </div>
+            <div class="col-md-6 pl-5">
+              <div class="row justify-content-end">
+                <div class="col-md-7">
+                  <div class="row">
+                    <div class="col-md-12 text-right border-bottom mb-5">
+                      <h3 class="text-black h4 text-uppercase">Cart Totals</h3>
+                    </div>
+                  </div>
+                  <div class="row mb-3">
+                    <div class="col-md-6">
+                      <span class="text-black">Subtotal</span>
+                    </div>
+                    <div class="col-md-6 text-right">
+                      <strong class="text-black"><%=myCart.totalCost%></strong>
+                    </div>
+                  </div>
+                  <div class="row mb-5">
+                    <div class="col-md-6">
+                      <span class="text-black">Total</span>
+                    </div>
+                    <div class="col-md-6 text-right">
+                      <strong class="text-black"><%=myCart.totalCost%></strong>
+                    </div>
+                  </div>
+  
+                  <div class="row">
+                    <div class="col-md-12">
+                      <button class="btn btn-primary btn-lg py-3 btn-block" onclick="window.location='checkout.html'">Proceed To Checkout</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <%-include('../layouts/home/footer.ejs')%>
+  </div>
+
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/aos.js"></script>
+  <script src="js/main.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.js" integrity="sha512-mgZL3SZ/vIooDg2mU2amX6NysMlthFl/jDbscSRgF/k3zmICLe6muAs7YbITZ+61FeUoo1plofYAocoR5Sa1rQ==" crossorigin="anonymous"></script>
+  
+<script>
+  window.onload=function(){
+    if(success_msg !==""){
+      new Noty({
+  
+    text: 'Some notification text',
+  
+}).show();
+      } 
+  
+  if(error_msg !==""){
+    noty({
+    
+    text: 'Some notification text',
+    
+}).show();
+      } 
+  
+ 
+    }
+  </script>
+    
+  </body>
+</html>
